@@ -1,44 +1,59 @@
 package hellocucumber;
 
+import Objects.PageObjects;
 import Objects.Person;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import org.junit.jupiter.api.Assertions.*;
+import org.openqa.selenium.By;
+import utils.SeleniumCommon;
+
+import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class StepDefinitions {
 
-    int a = 0 ;
-    int b = 1 ;
-    int i = 5 ;
+   private String browserName = "chrome";
 
-    @Given("I add two numbers")
-    public void i_add_two_numbers() {
+    @Given("I open sample selenium website in {string}")
+    public void i_open_sample_selenium_website_in(String browser) {
         // Write code here that turns the phrase above into concrete actions
-        int c = a + b;
-        i = 9 ;
-        int i = 2 ;
-        System.out.println("Variable Output 1 :" + i );
+        SeleniumCommon.getDriver(browser).get("http://www.seleniumframework.com/Practiceform/");
+
     }
 
-    @When("I find the result")
-    public void i_find_the_result() {
+    @When("I enter my email id")
+    public void i_enter_my_email_id() {
         // Write code here that turns the phrase above into concrete actions
-       i = 3 ;
-       System.out.println("Variable Output 2 :" + i );
+     SeleniumCommon.driver.findElement(By.xpath(PageObjects.email_id_field_absolute)).sendKeys("abc@xyz.com");
     }
 
-    @Given("I create an Object in Person class")
-    public void i_createAnObject() {
+    @Then("I should subscribe")
+    public void i_should_subscribe() {
         // Write code here that turns the phrase above into concrete actions
-        Person person = new Person();
-        String stepName = person.name;
-
-        System.out.println(person.getName());
+     SeleniumCommon.driver.findElement(By.xpath(PageObjects.subscribe)).click();
     }
+
+ @And("I should close")
+ public void i_should_close() throws  InterruptedException {
+  // Write code here that turns the phrase above into concrete actions
+
+  //SeleniumCommon.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+  //SeleniumCommon.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+  Thread.sleep(5000);
+
+  SeleniumCommon.driver.quit();
+
+ }
+
+
+
 
 }
