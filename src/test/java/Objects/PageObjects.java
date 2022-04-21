@@ -8,4 +8,6 @@ public class PageObjects {
     public static String element1_absolute = "/html/body/div[1]/div[2]/div[2]/div/div/a[2]";
     public static String element1_relative = "//*[@id=\"periodicElement\"]";
     public static String homePage_heading = "//*[@id=\"content\"]/div[1]/div/div/div/div/h2/span/strong";
+    public static String newBrowserWindow_button = "//*[@id=\"button1\"]";
+    public static String newBrowserWindow_mobile_menu = "//*[@id=\"mobile-menu\"]";
 }
