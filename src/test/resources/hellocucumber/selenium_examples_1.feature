@@ -5,12 +5,6 @@ Feature: selenium examples
     Then I should subscribe
 
 
-  Scenario: find list of elements
-    When I Scroll down to the bottom
-    And I click on Element 1
-    Then I should see element 1 webpage
-
-  @run
   Scenario: test window handles
     When I click on the New window button
     Then I should see a new window
