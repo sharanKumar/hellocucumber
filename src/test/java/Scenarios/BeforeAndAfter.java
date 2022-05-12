@@ -14,7 +14,7 @@ public class BeforeAndAfter extends WebDriverContext {
 
     private String browserName = "Chrome";
 
-    @Before
+
     public void i_open_sample_selenium_website_in() throws InterruptedException{
         // Write code here that turns the phrase above into concrete actions
         getDriver(browserName);
@@ -23,7 +23,7 @@ public class BeforeAndAfter extends WebDriverContext {
     }
 
 
-    @After
+
     public void i_should_close(Scenario scenario) throws InterruptedException {
 
         if (scenario.isFailed()) {
