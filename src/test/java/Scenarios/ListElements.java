@@ -19,9 +19,9 @@ import static utils.WebDriverContext.driver;
 
 public class ListElements extends Action {
 
+
     @And("I click on Element 1")
     public void i_click_on_Element1() throws Exception {
-        // Write code here that turns the phrase above into concrete actions
         clickFirstElement(PageObjects.element1_relative);
     }
 

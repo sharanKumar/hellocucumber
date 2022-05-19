@@ -12,13 +12,11 @@ public class APIScenarios extends ApiSupport {
 
     @Given("I verify Get method")
     public void I_verify_GET() throws Exception {
-        // Write code here that turns the phrase above into concrete actions
         GET(requestURI);
     }
 
     @Given("I verify post method")
     public void I_verify_POST() throws Exception {
-        // Write code here that turns the phrase above into concrete actions
         JSONObject request = new JSONObject();
 
         request.put("name", "Ajeet");
